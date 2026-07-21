@@ -20,6 +20,7 @@ Closed products ([ProMedNet](https://crossclinical.com) networking + hosted shad
 | S6 | [synthetic-case-quizzes](https://github.com/Cross-Clinical/synthetic-case-quizzes) | v0.1.0 | Yes |
 | S7 | [clinical-experience-resume](https://github.com/Cross-Clinical/clinical-experience-resume) | v0.1.0 | Yes |
 | S8 | [edu-medical-assistant](https://github.com/Cross-Clinical/edu-medical-assistant) | v0.1.0 | Yes |
+| — | [oss-rails](https://github.com/Cross-Clinical/oss-rails) | shared | Disclaimer + input_guard template |
 
 ## Hugging Face Spaces
 
