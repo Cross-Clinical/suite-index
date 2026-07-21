@@ -1,4 +1,4 @@
-# Cross Clinical — Open Source Suite
+# Cross Clinical — Suite Index
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Cross Clinical](https://img.shields.io/badge/Cross%20Clinical-OSS-0B3D2E)](https://crossclinical.com)
