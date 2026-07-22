@@ -26,14 +26,8 @@ Closed products ([ProMedNet](https://crossclinical.com) networking + hosted shad
 
 Each Gradio app is Space-ready (`README.md` YAML + `app.py` + `requirements.txt`).
 
-Deploy (requires HF account linked to org):
-
-```bash
-# Example
-huggingface-cli upload Cross-Clinical/health-pathway-explorer ./oss/health-pathway-explorer --repo-type=space
-```
-
-See [HF_DEPLOY.md](./HF_DEPLOY.md) in this monorepo workspace or each repo README.
+- Manual deploy: [HF_DEPLOY.md](./HF_DEPLOY.md)
+- Automation overview: [CI_CD.md](./CI_CD.md) (GitHub Actions CI + optional HF sync)
 
 ## Shared rails
 
