@@ -36,6 +36,7 @@ Each Gradio app is Space-ready (`README.md` YAML + `app.py` + `requirements.txt`
 - Input guards against PHI-like and diagnosis intents in Spaces
 - DCO for contributions
 - Next quality improvements: [RECOMMENDATIONS.md](./RECOMMENDATIONS.md)
+- Contributor guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Kill criteria (day 45 / day 90)
 

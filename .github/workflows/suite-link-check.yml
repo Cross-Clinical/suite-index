@@ -1,0 +1,38 @@
+name: Suite link check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify portfolio repo links
+        run: |
+          python3 <<'PY'
+          import re
+          import sys
+          import urllib.error
+          import urllib.request
+
+          text = open("README.md", encoding="utf-8").read()
+          repos = sorted(set(re.findall(r"github\.com/Cross-Clinical/([\w-]+)", text)))
+          missing = []
+          for repo in repos:
+              url = f"https://api.github.com/repos/Cross-Clinical/{repo}"
+              req = urllib.request.Request(url, headers={"User-Agent": "suite-index-ci"})
+              try:
+                  with urllib.request.urlopen(req) as resp:
+                      if resp.status != 200:
+                          missing.append(repo)
+              except urllib.error.HTTPError:
+                  missing.append(repo)
+          if missing:
+              print("Missing or inaccessible repos:", ", ".join(missing))
+              sys.exit(1)
+          print("OK:", ", ".join(repos))
+          PY
