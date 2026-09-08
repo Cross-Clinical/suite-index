@@ -35,6 +35,7 @@ Each Gradio app is Space-ready (`README.md` YAML + `app.py` + `requirements.txt`
 - [DISCLAIMER](https://github.com/Cross-Clinical/shadowing-hours-schema/blob/main/DISCLAIMER.md) on every project
 - Input guards against PHI-like and diagnosis intents in Spaces
 - DCO for contributions
+- Next quality improvements: [RECOMMENDATIONS.md](./RECOMMENDATIONS.md)
 
 ## Kill criteria (day 45 / day 90)
 
