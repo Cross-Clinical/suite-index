@@ -8,7 +8,7 @@ This repo review suggests that the suite is already strong in mission, safety, a
 
 ### 1) Standardize shared Python app scaffolding
 
-Most Gradio apps follow a similar pattern: app entrypoint, educational guardrails, and corpus-driven retrieval. That overlap is a good candidate for a shared template package or internal library.
+Most Gradio apps follow a similar pattern: `app.py` entrypoint, copied `input_guard.py` rails, and corpus or glossary lookup. `edu-medical-assistant` does token-overlap retrieval; the others are mostly keyword or field lookup. That overlap is a good candidate for a shared template package or internal library. `oss-rails` is already the copy-source for guards, not a runtime dependency.
 
 Recommended actions:
 - create a lightweight shared library for common Gradio scaffolding
@@ -23,11 +23,11 @@ Impact:
 
 ### 2) Add automated tests to every educational app
 
-The schema package already has validation tests, but the Gradio apps are mostly untested. This makes regressions more likely in safety filtering, retrieval quality, and response formatting.
+`shadowing-hours-schema` already has `npm test` plus fixture validation. Gradio apps have syntax/JSON CI notes in [CI_CD.md](./CI_CD.md), but no unit tests for `guard_input` or app behavior. That makes regressions more likely in safety filtering, retrieval quality, and response formatting.
 
 Recommended actions:
 - unit test `guard_input` behavior on PHI and diagnosis cases
-- verify retrieval ranking for known topics
+- verify retrieval ranking in apps that score corpus hits (currently `edu-medical-assistant`)
 - smoke-test app startup
 - validate corpus JSON files at import time
 - add a small set of end-to-end checks for key study flows
@@ -54,12 +54,12 @@ Impact:
 
 ### 4) Improve release and version tracking
 
-The suite already indicates v0.1.0 in docs, but stronger versioning discipline would help as the portfolio matures.
+The suite already indicates v0.1.0 in docs, but only `shadowing-hours-schema` ships a changelog. Stronger versioning discipline would help as the portfolio matures.
 
 Recommended actions:
 - adopt a release checklist for each repo
 - publish changelogs for each toolkit
-- pin dependency versions in shared apps
+- keep Dependabot range bumps, and pin only when a Space needs a known-good install
 - document compatibility expectations before release
 
 Impact:
@@ -81,14 +81,6 @@ Impact:
 - lower friction for new contributors
 - more consistent repo hygiene
 - easier multi-repo maintenance
-
-## Suggested PR title
-
-"Add OSS roadmap and recommendation document for shared quality improvements"
-
-## Suggested PR summary
-
-This PR adds a shared recommendations document for the Cross Clinical OSS suite. It captures the org's current strengths, identifies the highest-value next improvements, and outlines a path to stronger consistency, safer operations, and better maintainability across the portfolio.
 
 ## Why this matters
 
